@@ -1,50 +1,63 @@
 /* Pagination container (move bullets up/down) */
 .swiper-pagination {
-  margin-bottom: 13px; /* space from bottom */
+  margin-bottom: 13px;
+  /* space from bottom */
 }
 
 /* Default bullets */
 .swiper-pagination-bullet {
-  background-color: #bfac98 !important; /* force override */
+  background-color: #bfac98 !important;
+  /* force override */
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  opacity: 1 !important; /* sometimes opacity is lowered by default */
+  opacity: 1 !important;
+  /* sometimes opacity is lowered by default */
   transition: all 0.3s ease;
 }
 
 /* Active bullet (when slide is active) */
 .swiper-pagination-bullet-active {
-  width: 25px;              /* capsule width */
-  height: 12px;             /* capsule height */
-  border-radius: 9999px;    /* makes both ends fully rounded */
-  background-color: #d4af37  !important; /* gold shade */
+  width: 25px;
+  /* capsule width */
+  height: 12px;
+  /* capsule height */
+  border-radius: 9999px;
+  /* makes both ends fully rounded */
+  background-color: #d4af37 !important;
+  /* gold shade */
 }
+
 .swiper-button-next,
 .swiper-button-prev {
-  width: 60px;                  
+  width: 60px;
   height: 60px;
-  border-radius: 50%;         /* fully rounded */
+  border-radius: 50%;
+  /* fully rounded */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-    backdrop-filter: blur(16px);  /* similar to Tailwind's backdrop-blur-lg */
+  backdrop-filter: blur(16px);
+  /* similar to Tailwind's backdrop-blur-lg */
   -webkit-backdrop-filter: blur(16px);
 }
 
 /* The arrow itself */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 19px;      /* arrow size */
+  font-size: 19px;
+  /* arrow size */
   color: #d4af37;
-  font-weight: bold;       /* gold arrow */
+  font-weight: bold;
+  /* gold arrow */
 }
 
 /* Hover effect */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: #000;   /* black background */
+  background-color: #000;
+  /* black background */
 }
 
 .custom-pagination .swiper-pagination-bullet {
@@ -63,3 +76,21 @@
 
 
 
+/* Hide navigation buttons on mobile (smaller than 768px) */
+@media (max-width: 767px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+/* Show navigation buttons again for md and lg (768px and up) */
+@media (min-width: 768px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex !important;
+    /* or block, depending on your layout */
+  }
+}
